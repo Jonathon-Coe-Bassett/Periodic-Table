@@ -1,12 +1,27 @@
 import java.io.*;
-
+import java.util.*;
 public class Runner
 	{
-
+		public static ArrayList<Element> elements = new ArrayList<Element>();
 		public static void main(String[] argsv) throws IOException
 			{
-				// TODO Auto-generated method stub
-
+				createTable();
+				for(Element x : elements)
+					{
+						System.out.println(x);
+					}
 			}
-
+		public static void createTable() throws FileNotFoundException
+		{
+			Scanner file = new Scanner(new File("periodicTable"));
+			while(file.hasNext())
+				{
+					String[] el = file.nextLine().split(",");
+					el[3] = el[3].replace("[", "").replace("]", "");
+					elements.add(new Element(Integer.parseInt(el[0]), el[1], el[2], Double.parseDouble(el[3]), el[4]));
+				}
+			
+			
+		}
+		
 	}

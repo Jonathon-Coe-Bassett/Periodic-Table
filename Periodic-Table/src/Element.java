@@ -5,18 +5,18 @@ public class Element
 		private String symbol;
 		private String name;
 		private double atomicMass;
-		private int charge;
-		public Element(int an, String s, String n, double am, int c)
+		private String color;
+		public Element(int an, String s, String n, double am, String c)
 		{
 			this.atomicNumber=an;
 			this.symbol=s;
 			this.name=n;
 			this.atomicMass=am;
-			this.charge=c;
+			this.color=c;
 		}
 		public String toString()
 		{
-			return this.getName()+ " " + this.getSymbol() + " " + this.getAtomicNumber() + " " + this.getAtomicMass() + this.getCharge();
+			return this.getName()+ " " + this.getSymbol() + "  " + this.getAtomicNumber() + " " + this.getAtomicMass() + " " + this.getColor();
 			
 		}
 		public int getAtomicNumber()
@@ -51,12 +51,13 @@ public class Element
 			{
 				this.atomicMass = atomicMass;
 			}
-		public int getCharge()
+		public String getColor()
 			{
-				return charge;
+				return color;
 			}
-		public void setCharge(int charge)
+		public void setColor(String color)
 			{
-				this.charge = charge;
+				this.color = color;
 			}
+		
 	}
