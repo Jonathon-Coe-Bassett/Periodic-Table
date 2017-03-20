@@ -16,7 +16,7 @@ public class Element
 		}
 		public String toString()
 		{
-			return this.getName()+ " " + this.getSymbol() + " " + this.getAtomicNumber() + " " + this.getAtomicMass() + " " + this.getColor();
+			return this.getName()+ " " + this.getSymbol() + "  " + this.getAtomicNumber() + " " + this.getAtomicMass() + " " + this.getColor();
 			
 		}
 		public int getAtomicNumber()
