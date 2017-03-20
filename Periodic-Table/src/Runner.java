@@ -16,8 +16,9 @@ public class Runner
 			Scanner file = new Scanner(new File("periodicTable"));
 			while(file.hasNext())
 				{
-					String[] el = file.nextLine().split(",", 5);
-					elements.add(new Element(Integer.parseInt(el[0]), el[1], el[2], Double.parseDouble((el[3].replace("(.)", ""))), Integer.parseInt(el[4])));
+					String[] el = file.nextLine().split(",");
+					el[3] = el[3].replace("[", "").replace("]", "");
+					elements.add(new Element(Integer.parseInt(el[0]), el[1], el[2], Double.parseDouble(el[3]), el[4]));
 				}
 			
 			
