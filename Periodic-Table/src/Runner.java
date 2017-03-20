@@ -10,6 +10,9 @@ public class Runner
 					{
 						System.out.println(x);
 					}
+				Chemical nitrate=new Chemical(new Chemical(elements.get(6), 1), new Chemical(elements.get(7), 2));
+				Chemical c=new Chemical(new Chemical(elements.get(45), 1), nitrate);
+				System.out.println(c);
 			}
 		public static void createTable() throws FileNotFoundException
 		{
