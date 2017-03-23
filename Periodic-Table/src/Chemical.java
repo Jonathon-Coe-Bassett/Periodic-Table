@@ -9,22 +9,16 @@ public class Chemical extends Element
 //		}
 		public Chemical(Element e, int num)
 		{
-			super(-1, e.getSymbol()+ num, e.getName(), num * (e.getAtomicMass()), num*(((Chemical) e).calcCharge()));
+			super(-1, e.getSymbol()+ num, e.getName(), num * (e.getAtomicMass()), e.getColor());
 			for(int i=0; i<num; i++)
 			contents.add(e);
 		}
 		public Chemical(Chemical a, Chemical b)
 		{
-			super(-1, a.getSymbol()+b.getSymbol(), a.getName()+ " " + b.getName(), addMass(a, b), a.getCharge()+b.getCharge());
+			super(-1, a.getSymbol()+b.getSymbol(), a.getName()+ " " + b.getName(), addMass(a, b), a.getColor()+b.getColor());
 			this.contents.add(a);
 			this.contents.add(b);
 			
-		}
-		@Override
-		public String toString()
-		{
-			return null;
-			//for now
 		}
 		public static double addMass(Element e, Element b)
 		{
