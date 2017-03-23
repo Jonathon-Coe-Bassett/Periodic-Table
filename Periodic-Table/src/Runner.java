@@ -3,8 +3,10 @@ import java.util.*;
 public class Runner
 	{
 		public static ArrayList<Element> elements = new ArrayList<Element>();
+		public static ArrayList<Color> c = new ArrayList<Color>();
 		public static void main(String[] argsv) throws IOException
 			{
+				colors();
 				createTable();
 				for(Element x : elements)
 					{
@@ -14,6 +16,16 @@ public class Runner
 				Chemical c=new Chemical(new Chemical(elements.get(45), 1), nitrate);
 				System.out.println(c);
 			}
+		public static void colors() throws IOException
+		{
+			Scanner file = new Scanner(new File("Colors"));
+			while(file.hasNext())
+				{
+					String s = file.nextLine();
+					String[] p = s.split(" #");
+					c.add(new Color(p[0], p[1]));
+				}
+		}
 		public static void createTable() throws FileNotFoundException
 		{
 			Scanner file = new Scanner(new File("periodicTable"));
